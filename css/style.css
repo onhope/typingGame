@@ -48,6 +48,6 @@ body {
   cursor: pointer;
 }
 .loading {
-  background-color: #fff;
+  background: #ccc;
   cursor: not-allowed;
 }
