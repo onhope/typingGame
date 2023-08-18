@@ -1,5 +1,5 @@
 // 변수
-const SETTING_TIME = 7;
+const SETTING_TIME = 5;
 let words = ["banana", "apple", "pencil", "note", "book", "home"];
 let time;
 let score = 0;
@@ -16,6 +16,18 @@ const button = document.querySelector(".button");
 time = 20;
 
 const url = 'https://random-word-api.herokuapp.com/word?number=100';
+
+const runToast = (text) => {
+  const option = {
+    text : text,
+    duration: 3000,
+    newWindow: true,
+    gravity: "top",
+    position: "left",
+    background: "linear-gradient(to right, #00b09b, #96c93d)"
+  }
+  Toastify(option).showToast()
+};
 
 const getWords = () => {
   axios.get(url).then(res => {
@@ -45,11 +57,13 @@ const countDown = () => {
 }
 
 const run = () => {
+  clearInterval(timeInterval);
   if (isReaady === false) {
     return;
   }
   timeInterval = setInterval(countDown, 1000);
   score = 0;
+  time = SETTING_TIME;
   wordInput.value = "";
   scoreDispaly.innerText = score;
   isPlaying = true;
@@ -61,6 +75,7 @@ const checkMatch = () => {
   }
   if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
     score++
+    runToast(wordDisplay.innerText);
     time = SETTING_TIME;
     wordInput.value = "";
     const randomIndex = Math.floor(Math.random()*words.length);
