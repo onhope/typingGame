@@ -31,7 +31,10 @@ const runToast = (text) => {
 
 const getWords = () => {
   axios.get(url).then(res => {
+    // console.log(res);
+    // filter를 이용하여 단어의 길이가 8 미만인 경우만 words에 담음 
     words = res.data.filter((word) => word.length <8);
+    // console.log(words);
     button.innerText = "게임시작";
     button.classList.remove("loading");
     isReaady = true;
@@ -73,6 +76,7 @@ const checkMatch = () => {
   if (!isPlaying) {
     return
   }
+  // 제시한 단어와 내가 입력한 단어가 같은 경우
   if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
     score++
     runToast(wordDisplay.innerText);
