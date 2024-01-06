@@ -6,7 +6,11 @@
 
 ## 학습 
 ### 1. JS : Axios 
-Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리
+: Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리       
+
+: 쉽게 말해서 backend, frontend 통신을 쉽게 하기 위해 Ajax와 더불어 사용    
+
+: 자바스크립트에는 fetch api 가 있지만, 프레임워크에서 ajax를 구현할때는 axios를 쓴다.    
 
 - GET 요청
 ```
@@ -55,7 +59,8 @@ Toastify({
 https://random-word-api.herokuapp.com/home   
 
 **JS**      
-https://yamoo9.github.io/axios/guide/       
+https://yamoo9.github.io/axios/guide/  
+https://velog.io/@yrats/Axios         
 https://github.com/apvarun/toastify-js/blob/master/README.md    
 
 **키워드**      
